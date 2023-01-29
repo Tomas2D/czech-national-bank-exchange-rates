@@ -1,13 +1,10 @@
 import { useQuery } from 'react-query'
 import { ExchangeRateEntry } from '@module/currency-convertor/types'
 
-const CORS_BYPASS_ENDPOINT = `https://cors-anywhere.herokuapp.com/`
-
-const API_ENDPOINT =
-  'https://www.cnb.cz/en/financial-markets/foreign-exchange-market/central-bank-exchange-rate-fixing/central-bank-exchange-rate-fixing/daily.txt'
+const API_ENDPOINT = 'https://summer-snow-e787.geoscan.workers.dev/'
 
 async function fetchRates(): Promise<ExchangeRateEntry[]> {
-  const response = await fetch(CORS_BYPASS_ENDPOINT.concat(API_ENDPOINT))
+  const response = await fetch(API_ENDPOINT)
 
   if (!response.ok) {
     throw new Error(`Failed to retrieve exchange rates!`)
