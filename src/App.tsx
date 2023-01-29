@@ -1,20 +1,32 @@
-import { useState } from 'react'
+import { Core } from '@module/core/components/Core'
+import { Layout } from '@ui/components/Layout'
+import { Content } from '@ui/components/Content'
+import Title from '@ui/components/Title'
+import { CurrencyConvertor } from '@module/currency-convertor/components/CurrencyConvertor'
+import { ErrorBoundary } from '@module/core/components/ErrorBoundary'
+import { Paragraph } from '@ui/components/Paragraph'
+import styled from 'styled-components'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export function App() {
   return (
-    <div className='App'>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className={'read-the-docs'}>Click on the Vite and React logos to learn more</p>
-    </div>
+    <Core>
+      <Layout>
+        <Content>
+          <Title>💰 Currency Exchange Rates App 💰</Title>
+          <StyledParagraph>
+            Welcome to my fun and playful 🎉 currency exchange rates web app!
+          </StyledParagraph>
+
+          <ErrorBoundary>
+            <CurrencyConvertor />
+          </ErrorBoundary>
+        </Content>
+      </Layout>
+    </Core>
   )
 }
 
-export default App
+const StyledParagraph = styled(Paragraph)`
+  margin-top: 0.75rem;
+  text-align: center;
+`
