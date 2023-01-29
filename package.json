@@ -1,0 +1,46 @@
+{
+  "name": "czech-national-bank-exchange-rates",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tomas2D/czech-national-bank-exchange-rates.git"
+  },
+  "engines": {
+    "node": "^18.12.1",
+    "npm": "^8.19.2"
+  },
+  "bugs": {
+    "url": "https://github.com/Tomas2D/czech-national-bank-exchange-rates/issues"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/* && prettier --check src/**/*",
+    "lint:fix": "eslint src/**/* --fix && prettier --write src/**/*",
+    "changelog": "npx gitmoji-changelog"
+  },
+  "author": "Tomáš Dvořák <toomas2d@gmail.com>",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4",
+    "@types/react-dom": "^18.0.10",
+    "@types/react": "^18.0.27",
+    "vite": "^4.0.4",
+    "@vitejs/plugin-react": "^3.0.1",
+    "eslint": "^8.33.0",
+    "prettier": "^2.8.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-config-prettier": "^8.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "gitmoji-changelog": "^2.3.0"
+  }
+}
