@@ -25,16 +25,17 @@ export function Select<T = undefined>({
   wrapperProps,
   onChange = noop,
 }: SelectProps<T>) {
+  const showPlaceholder = Boolean(wrapperProps?.placeholder)
   const handleChange: ChangeEventHandler<HTMLSelectElement> = (select) => {
-    const selectedOption = options[select.target.selectedIndex]
+    const selectedOption = options[select.target.selectedIndex - Number(showPlaceholder)]
     onChange(selectedOption)
   }
 
   return (
     <StyledSelect {...wrapperProps} onChange={handleChange} value={selectedValue ?? ''}>
-      {wrapperProps?.placeholder && (
+      {showPlaceholder && (
         <option value='' disabled hidden>
-          {wrapperProps.placeholder}
+          {wrapperProps!.placeholder}
         </option>
       )}
       {options.map((option) => (
