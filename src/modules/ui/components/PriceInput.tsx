@@ -2,7 +2,7 @@ import { Input } from './Input'
 import { ChangeEvent, ComponentProps, useState } from 'react'
 
 function parseValue(value: string): number | null {
-  const trimmed = (value || '').trim().replace(/[., , ]/g, '')
+  const trimmed = (value || '').trim().replace(/[.,  ]/g, '')
   const parsed = parseInt(trimmed)
 
   return Number.isNaN(parsed) ? null : parsed
@@ -14,11 +14,11 @@ export function formatPrice(value: number | null): string {
   }
 
   const intl = new Intl.NumberFormat('cs-CZ')
-  return intl.format(value)
+  return intl.format(value).replace(/ /g, ' ')
 }
 
 export interface PriceInputProps {
-  inputProps: Omit<ComponentProps<typeof Input>, 'type' | 'onChange' | 'value' | 'defaultValue'>
+  inputProps?: Omit<ComponentProps<typeof Input>, 'type' | 'onChange' | 'value' | 'defaultValue'>
   onChange?: (value: null | number) => void
 }
 

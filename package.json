@@ -17,7 +17,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "lint": "eslint src/**/* && prettier --check src/**/*",
     "lint:fix": "eslint src/**/* --fix && prettier --write src/**/*",
     "changelog": "npx gitmoji-changelog"
@@ -33,6 +34,9 @@
     "vite-tsconfig-paths": "^4.0.5"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/styled-components": "^5.1.26",
@@ -43,9 +47,12 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gitmoji-changelog": "^2.3.0",
+    "jsdom": "^21.1.0",
     "prettier": "^2.8.3",
+    "react-test-renderer": "^18.2.0",
     "typescript": "^4.9.4",
-    "vite": "^4.0.4"
+    "vite": "^4.0.4",
+    "vitest": "^0.28.3"
   },
   "resolutions": {
     "styled-components": "^5"

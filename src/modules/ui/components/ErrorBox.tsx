@@ -1,18 +1,20 @@
 import styled from 'styled-components'
 import Button from '@ui/components/Button'
+import { Paragraph } from '@ui/components/Paragraph'
 
 export interface ErrorBoxProps {
-  error?: Error
+  error?: Error | string
   retry?: () => unknown
 }
 
 export function ErrorBox({ error, retry, ...props }: ErrorBoxProps) {
   return (
     <StyledWrapper {...props}>
-      <p>Error has occurred 😭</p>
-      <StyledSerializedError>{JSON.stringify(String(error), null, 4)}</StyledSerializedError>
-      {error?.stack && (
-        <StyledSerializedError>{JSON.stringify(error.stack, null, 4)}</StyledSerializedError>
+      <Paragraph>Error has occurred 😭</Paragraph>
+      {error && (
+        <StyledSerializedError>
+          {JSON.stringify(typeof error === 'string' ? error : error.stack, null, 4)}
+        </StyledSerializedError>
       )}
       {retry && <Button buttonProps={{ onClick: retry }}>Retry the action</Button>}
     </StyledWrapper>

@@ -18,7 +18,7 @@ export function SourceCurrency({ onChange, isDisabled }: SourceCurrencyProps) {
           disabled: Boolean(isDisabled),
         }}
       />
-      <StyledInputLikeText as={'span'}>,- Kč</StyledInputLikeText>
+      <StyledInputLikeText>,- Kč</StyledInputLikeText>
     </StyledWrapper>
   )
 }
