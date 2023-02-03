@@ -18,7 +18,7 @@ Australia|dollar|1|AUD|15.582
 Brazil|real|1|BRL|4.325
 Bulgaria|lev|1|BGN|12.182
 Canada|dollar|1|CAD|16.455
-China|renminbi|1|CNY|3.233
+Philippines|peso|100|PHP|40.407
 Denmark|krone|1|DKK|3.203
 EMU|euro|1|EUR|23.825`),
       } as Response
@@ -68,11 +68,11 @@ EMU|euro|1|EUR|23.825`),
             "rate": 16.455,
           },
           {
-            "amount": 1,
-            "code": "CNY",
-            "country": "China",
-            "currency": "renminbi",
-            "rate": 3.233,
+            "amount": 100,
+            "code": "PHP",
+            "country": "Philippines",
+            "currency": "peso",
+            "rate": 40.407,
           },
           {
             "amount": 1,

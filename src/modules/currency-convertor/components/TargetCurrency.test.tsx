@@ -25,6 +25,13 @@ describe('TargetCurrency', async () => {
         rate: 30,
         country: 'GBP',
       },
+      {
+        currency: 'peso',
+        code: 'PHP',
+        amount: 100,
+        rate: 40.407,
+        country: 'Philippines',
+      },
     ]
 
     render(<TargetCurrency sourceAmount={1000} exchangeRates={exchangeRates} />)
@@ -47,5 +54,7 @@ describe('TargetCurrency', async () => {
     await expect(input.value).toMatchInlineSnapshot('"45.45"')
     await userEvent.selectOptions(select, exchangeRates[1].code)
     expect(input.value).toMatchInlineSnapshot('"33.33"')
+    await userEvent.selectOptions(select, exchangeRates[2].code)
+    expect(input.value).toMatchInlineSnapshot('"2474.82"')
   })
 })

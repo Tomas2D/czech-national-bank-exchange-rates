@@ -15,7 +15,8 @@ function calculateTargetAmount(
   target: ExchangeRateEntry | null,
 ) {
   if (target) {
-    const result = (sourceAmount || 0) / target.rate / target.amount
+    const amount = target.rate / target.amount
+    const result = (sourceAmount || 0) / amount
     return roundTo(result, 2)
   }
   return ''
